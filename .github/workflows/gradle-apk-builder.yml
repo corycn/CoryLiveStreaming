@@ -55,13 +55,13 @@ jobs:
           mkdir -p collected-apks
           find "$PROJECT_ROOT" -type f -path '*/build/outputs/apk/*.apk' -exec cp {} collected-apks/ \;
           test -n "$(find collected-apks -name '*.apk' -print -quit)"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: success()
         with:
           name: compiled-apks
           path: collected-apks/*.apk
           if-no-files-found: error
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: gradle-build-log
