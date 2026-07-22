@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.gradle-apk-builder/project.zip'
+      - '.gradle-apk-builder/trigger.json'
       - '.github/workflows/gradle-apk-builder.yml'
   workflow_dispatch:
 permissions:
